@@ -1,0 +1,109 @@
+body {
+    color: #fff3d3;
+    background: white url("images/background.jpeg") no-repeat right bottom;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    /*text-align: center;*/
+}
+
+.content{
+    width: 75%;
+    padding:10px;
+    background-color: black;
+    opacity: .7;
+    margin: 10px auto 0px auto;
+    border-radius: 10px;
+    box-shadow:0 0 40px  #000000;
+}
+
+.inspiration{
+    width: 75%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    opacity: .7;
+    border-radius: 10px;
+    vertical-align: top;
+    box-shadow:0 0 40px  #000000;
+}
+
+.centerMe{
+    padding:10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.centerHorz{
+    text-align:center;
+}
+
+.entry{
+    margin:10px;
+}
+
+.journalText{
+    color: #976c34;
+    padding:10px;
+}
+
+
+/*Button Stuff */
+
+button:hover,button:focus{
+    color:#4f140b;
+    background-color: #fff3d3
+}
+
+button:active{
+    color:#fff3d3;
+    background-color: #4f140b;
+}
+
+button:focus{
+    outline: 0;
+}
+
+button{
+    float:right;
+    display:inline-block;
+    padding:10px;
+    background-color: #4f140b;
+    color:inherit;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow:0 0 40px  #000000;
+    text-decoration: none;
+}
+
+#newEntry{
+    padding:10px;
+}
+
+/*Input stuff*/
+input[type="text"], textarea{
+    border-radius: 5px;
+    padding:5px;
+    margin:10px;
+    background-color: black;
+    color:white;
+}
+
+input[type="text"]:active, textarea:active, input[type="text"]:focus,textarea:focus{
+    /*box-shadow: 0px 10px 16px 0px #ccc;*/
+    background-color: white;
+    color:black;
+    outline: 0;
+}
+
+
+/* From http://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing */
+.clearfix::after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}

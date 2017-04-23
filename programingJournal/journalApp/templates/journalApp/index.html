@@ -1,0 +1,77 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'journalApp/style.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<div class="inspiration centerMe">
+    <h1>
+        “Focus on being productive instead of busy.”
+    </h1>
+    <h2>
+        ~ Tim Ferriss
+    </h2>
+</div>
+
+<div class="content">
+    <div id="lastEntry">
+        <div class="centerHorz">
+            <h2>Last Work Session</h2>
+            <div class="entry">Date: <span class="journalText">(Date)</span></div>
+            <div class="entry">Page Name: <span class="journalText">(PageName)</span></div>
+            <div class="entry">Line Number: <span class="journalText">(78)</span></div>
+        </div>
+        <div class="entry">What I was working on:</div>
+        <div class="entry journalText" id="prevSession">
+            I was working on this.
+        </div>
+        <div class="entry">What I am going to get down now:</div>
+        <div class="entry journalText" id="curGoals">
+            Get this page done.
+        </div>
+    </div>
+    <div id="buttons" class="clearfix">
+        <button onclick="createNewEntry()">New Entry</button>
+        <button>View Entry</button>
+    </div>
+    <div id="newEntry">
+        <h2 class="centerHorz">Save your session</h2>
+        <div class="inputTop">
+            Current Page Name:
+        </div>
+        <div class="inputBottom">
+            <input type="text" maxlength="64" placeholder="index.php" id="curPage" ></input>
+        </div>
+        <div class="inputTop">
+            Current Line Number:
+        </div>
+        <div class="inputBottom">
+            <input type="text" maxlength="5" placeholder="78" ></input>
+        </div>
+        <div class="inputTop">
+            What I was working on:
+        </div>
+        <div class="inputBottom">
+            <textarea rows="4" cols="60" placeholder="Current Thoughts..."></textarea>
+        </div>
+        <div class="inputTop">
+            Goals for next time:
+        </div>
+        <div class="inputBottom">
+            <textarea rowss="4" cols="60" placeholder="I am going to finish..."></textarea>
+        </div>
+        <div class="clearfix">
+            <button>Save</button>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+    $("#newEntry").hide();
+
+});
+function createNewEntry(){
+    $('#newEntry').slideDown();
+    $('#curPage').focus();
+    /* adapted from: http://stackoverflow.com/questions/6682451/animate-scroll-to-id-on-page-load*/
+    $("html, body").animate({ scrollTop: $('#curPage').offset().top }, 1000);
+}
+</script>
