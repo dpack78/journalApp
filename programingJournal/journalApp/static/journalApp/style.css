@@ -99,7 +99,6 @@ input[type="text"]:active, textarea:active, input[type="text"]:focus,textarea:fo
     outline: 0;
 }
 
-
 /* From http://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing */
 .clearfix::after {
    content: " ";

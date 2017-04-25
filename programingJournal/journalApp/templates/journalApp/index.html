@@ -4,6 +4,7 @@
 
 <div class="inspiration centerMe">
     <h1>
+
         “Focus on being productive instead of busy.”
     </h1>
     <h2>
@@ -15,17 +16,17 @@
     <div id="lastEntry">
         <div class="centerHorz">
             <h2>Last Work Session</h2>
-            <div class="entry">Date: <span class="journalText">(Date)</span></div>
-            <div class="entry">Page Name: <span class="journalText">(PageName)</span></div>
-            <div class="entry">Line Number: <span class="journalText">(78)</span></div>
+            <div class="entry">Date: <span class="journalText">{{newest_entry}}</span></div>
+            <div class="entry">Page Name: <span class="journalText">{{newest_entry.page_name}}</span></div>
+            <div class="entry">Line Number: <span class="journalText">{{newest_entry.line_number}}</span></div>
         </div>
         <div class="entry">What I was working on:</div>
         <div class="entry journalText" id="prevSession">
-            I was working on this.
+            {{newest_entry.working_on}}
         </div>
         <div class="entry">What I am going to get down now:</div>
         <div class="entry journalText" id="curGoals">
-            Get this page done.
+            {{newest_entry.goals}}
         </div>
     </div>
     <div id="buttons" class="clearfix">
@@ -66,7 +67,6 @@
 <script>
 $(function(){
     $("#newEntry").hide();
-
 });
 function createNewEntry(){
     $('#newEntry').slideDown();
