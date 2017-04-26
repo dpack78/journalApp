@@ -33,42 +33,57 @@
         <button onclick="createNewEntry()">New Entry</button>
         <button>View Entry</button>
     </div>
-    <div id="newEntry">
+    <form id="newEntry" style="display:none" action="{% url 'journalApp:saveNewDay' %}" >
         <h2 class="centerHorz">Save your session</h2>
         <div class="inputTop">
             Current Page Name:
         </div>
         <div class="inputBottom">
-            <input type="text" maxlength="64" placeholder="index.php" id="curPage" ></input>
+            <input type="text" maxlength="64" placeholder="index.php" id="curPage" name="curPage" ></input>
         </div>
         <div class="inputTop">
             Current Line Number:
         </div>
         <div class="inputBottom">
-            <input type="text" maxlength="5" placeholder="78" ></input>
+            <input type="text" maxlength="5" placeholder="78" name="lineNumber"></input>
         </div>
         <div class="inputTop">
             What I was working on:
         </div>
         <div class="inputBottom">
-            <textarea rows="4" cols="60" placeholder="Current Thoughts..."></textarea>
+            <textarea rows="4" cols="60" placeholder="Current Thoughts..." name="currentThoughts"></textarea>
         </div>
         <div class="inputTop">
             Goals for next time:
         </div>
         <div class="inputBottom">
-            <textarea rowss="4" cols="60" placeholder="I am going to finish..."></textarea>
+            <textarea rowss="4" cols="60" placeholder="I am going to finish..." name = "goals"></textarea>
         </div>
         <div class="clearfix">
-            <button>Save</button>
+            <button type="submit">Save</button>
         </div>
-    </div>
+    </form>
 </div>
 <script>
 $(function(){
     $("#newEntry").hide();
+    // $("#newEntry").dialog({
+    //     atuoOpen:false,
+    //     resizable:false,
+    //     width:800,
+    //     modal:true
+    //     buttons: {
+    //         "Save":function(){
+    //
+    //         },
+    //         "Cancel":function(){
+    //             $(this).dialog("close");
+    //         }
+    //     }
+    // });
 });
 function createNewEntry(){
+    // $("#newEntry").dialog("open");
     $('#newEntry').slideDown();
     $('#curPage').focus();
     /* adapted from: http://stackoverflow.com/questions/6682451/animate-scroll-to-id-on-page-load*/
