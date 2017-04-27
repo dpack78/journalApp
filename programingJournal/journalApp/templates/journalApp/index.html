@@ -31,7 +31,7 @@
     </div>
     <div id="buttons" class="clearfix">
         <button onclick="createNewEntry()">New Entry</button>
-        <button>View Entry</button>
+	    <button onclick="viewPreviusEntries()">View Entry</button>
     </div>
     <form id="newEntry" style="display:none" action="{% url 'journalApp:saveNewDay' %}" >
         <h2 class="centerHorz">Save your session</h2>
@@ -63,28 +63,30 @@
             <button type="submit">Save</button>
         </div>
     </form>
+	<div id="previousEntries" style="display:none">
+		<h2>Previous Entries</h2>
+		{% for entry in all_entries %}
+			<a href="/{% %}">Date</a>
+		{% endfor %}
+		<!-- end this foreach -->
+	</div>
 </div>
 <script>
 $(function(){
     $("#newEntry").hide();
-    // $("#newEntry").dialog({
-    //     atuoOpen:false,
-    //     resizable:false,
-    //     width:800,
-    //     modal:true
-    //     buttons: {
-    //         "Save":function(){
-    //
-    //         },
-    //         "Cancel":function(){
-    //             $(this).dialog("close");
-    //         }
-    //     }
-    // });
+	$("#previousEntries").hide();
 });
+
+function viewPreviusEntries(){
+	$("#newEntry").slideUp("fast",function(){
+	    $('#previousEntries').slideDown();
+	});
+}
+
 function createNewEntry(){
-    // $("#newEntry").dialog("open");
-    $('#newEntry').slideDown();
+	$("#previousEntries").slideUp("fast",function(){
+	    $('#newEntry').slideDown();
+	});
     $('#curPage').focus();
     /* adapted from: http://stackoverflow.com/questions/6682451/animate-scroll-to-id-on-page-load*/
     $("html, body").animate({ scrollTop: $('#curPage').offset().top }, 1000);

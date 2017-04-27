@@ -5,6 +5,7 @@ from .models import Entry
 from django.utils import timezone
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
+from itertools import chain
 import pdb
 # Create your views here.
 
@@ -23,8 +24,11 @@ import pdb
 # def saveCodeSession(request):
 
 def index(request):
-    newest_entry = Entry.objects.latest('creation_date');
-    context = { 'newest_entry': newest_entry}
+    newest_entry = Entry.objects.latest('creation_date')
+	all_entries = Entry.objects.all()
+    context = { 'newest_entry': newest_entry,
+				'all_entries' : all_entries
+	}
     return render(request, 'journalApp/index.html',context)
 
 def saveNewDay(request):
