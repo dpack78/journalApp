@@ -53,22 +53,24 @@ body {
 
 /*Button Stuff */
 
-button:hover,button:focus{
+a:hover, a:focus, button:hover,button:focus{
     color:#4f140b;
     background-color: #fff3d3
 }
 
-button:active{
+a:active, button:active{
     color:#fff3d3;
     background-color: #4f140b;
 }
 
-button:focus{
+a:active, button:focus{
     outline: 0;
 }
 
 button{
     float:right;
+}
+a, button{
     display:inline-block;
     padding:10px;
     background-color: #4f140b;
@@ -77,6 +79,14 @@ button{
     border-radius: 10px;
     box-shadow:0 0 40px  #000000;
     text-decoration: none;
+}
+
+a{
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+
 }
 
 #newEntry{

@@ -65,10 +65,11 @@
     </form>
 	<div id="previousEntries" style="display:none">
 		<h2>Previous Entries</h2>
-		{% for entry in all_entries %}
-			<a href="/{% %}">Date</a>
-		{% endfor %}
-		<!-- end this foreach -->
+        <div class="clearfix">
+    		{% for entry in all_entries %}
+                <a href = "/{{ entry.id}}" >{{entry}}</a>
+    		{% endfor %}
+        </div>
 	</div>
 </div>
 <script>
